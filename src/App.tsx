@@ -962,7 +962,7 @@ function Resultado({ dados, comps, onBack, avaliacaoId }:{ dados:DadosImovel; co
           {
             table:{
               headerRows:1,
-              widths:[80,'*',70,70,95,100],
+              widths:[60,'*',70,60,85,100],
               body: comparativoRows
             },
             layout:'lightHorizontalLines',
@@ -1154,7 +1154,13 @@ function AuthShell({ children, onNovaAvaliacao, onShowPerfil, onShowHistorico }:
     <PageLayout>
       <div className="flex items-center justify-center">
         <form onSubmit={handleSubmit} className="w-full max-w-md bg-white p-6 rounded-2xl border" style={{borderColor:'var(--brand-border)'}}>
-          <div className="mb-6">
+          <div className="mb-6" style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'8px'}}>
+            <img
+              src="/logo-horizontal.png"
+              alt="Ximenes Netimóveis"
+              style={{height:52, maxWidth:'85%', objectFit:'contain'}}
+              onError={(e:any)=>{(e.currentTarget as HTMLImageElement).style.display='none';}}
+            />
             <img
               src="/logo-avaliacao.png"
               alt="Ximenes Avaliação"
